@@ -24,15 +24,16 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @Component
 public class TokenToMallUserMethodArgumentResolver implements HandlerMethodArgumentResolver {
 
-    @Autowired
+    @Resource
     private MallUserMapper mallUserMapper;
-    @Autowired
+    @Resource
     private NewBeeMallUserTokenMapper newBeeMallUserTokenMapper;
 
     public TokenToMallUserMethodArgumentResolver() {

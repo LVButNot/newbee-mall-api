@@ -1,6 +1,7 @@
 package ltd.newbee.mall.util;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
  * @email 2449207463@qq.com
  * @link https://github.com/newbee-ltd
  */
+@Data
 public class PageResult<T> implements Serializable {
 
     @ApiModelProperty("总记录数")
@@ -44,46 +46,6 @@ public class PageResult<T> implements Serializable {
         this.pageSize = pageSize;
         this.currPage = currPage;
         this.totalPage = (int) Math.ceil((double) totalCount / pageSize);
-    }
-
-    public int getTotalCount() {
-        return totalCount;
-    }
-
-    public void setTotalCount(int totalCount) {
-        this.totalCount = totalCount;
-    }
-
-    public int getPageSize() {
-        return pageSize;
-    }
-
-    public void setPageSize(int pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    public int getTotalPage() {
-        return totalPage;
-    }
-
-    public void setTotalPage(int totalPage) {
-        this.totalPage = totalPage;
-    }
-
-    public int getCurrPage() {
-        return currPage;
-    }
-
-    public void setCurrPage(int currPage) {
-        this.currPage = currPage;
-    }
-
-    public List<T> getList() {
-        return list;
-    }
-
-    public void setList(List<T> list) {
-        this.list = list;
     }
 
 }
